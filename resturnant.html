@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Premium Restaurant</title>
+    <link rel="stylesheet" href="retsuranant.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="animated-title">Welcome to Flavors of India</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#whiskey">Whiskeys</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#book" class="book-button">Book a Table</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Experience world-class dining with exceptional cuisine prepared by award-winning chefs. Our restaurant offers an ambiance that is perfect for fine dining, family gatherings, or a romantic dinner for two.</p>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2>Our Special Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="dish.jpg" alt="Dish 1">
+                <h3>Full Saver Pack</h3>
+                <p>Succulent, perfectly grilled steak served with a side of fresh vegetables and mashed potatoes.</p>
+                <button id="checkout-button">Order for ₹1000/-</button>
+            </div>
+            <div class="menu-item">
+                <img src="passta.webp" alt="Dish 2">
+                <h3>Gourmet Pasta</h3>
+                <p>A delicious combination of gourmet pasta served with rich, creamy sauces and garlic bread.</p>
+                <button id="checkout-button">Order for ₹400/-</button>
+            </div>
+            <div class="menu-item">
+                <img src="dish3.jpg" alt="Dish 3">
+                <h3>Grilled Salmon</h3>
+                <p>Freshly grilled salmon with lemon butter sauce, served with a side of rice and salad.</p>
+                <button id="checkout-button">Order for ₹550/-</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>For inquiries, please call us at <strong>123-456-7890</strong></p>
+    </section>
+
+    <!-- Booking Form -->
+
+    <div id="booking-form" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Book a Table</h2>
+            <form id="form" action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+                <label for="people">Number of People:</label>
+                <input type="number" id="people" min="1" required>
+                <button type="submit">Confirm Booking</button>
+            </form>
+            <p id="payment-message" style="display:none;">Please proceed to payment of ₹500/- for the booking.</p>
+            <button id="payment-button" style="display:none;">Pay Now</button>
+        </div>
+    </div>
+    <div id="booking-form">
+        <h2>Book a Table</h2>
+        <input type="text" id="promo-code" placeholder="Enter Promo Code" />
+        <button id="apply-discount" onclick="applyDiscount()">Apply Discount</button>
+        <p id="discount-message" style="display:none;"></p>
+    </div>
+    
+    <!-- Total Price Section -->
+    <div id="total-price">
+        <h3>Total Amount: <span id="amount">1000</span> INR</h3>
+    </div>
+
+    <!-- Festive Discount Popup -->
+    <div id="discount-popup" class="modal">
+        <div class="modal-content">
+            <span class="close-discount-button">&times;</span>
+            <h2>Festive Discount Offer!</h2>
+            <p>Enjoy a special festive discount of <strong>10%</strong> off on your total bill when you book a table.</p>
+            <p>Make your reservation now and treat yourself to a delightful dining experience!</p>
+            <p>Use code <strong>FESTIVE10</strong> at checkout.</p>
+        </div>
+    </div>
+     <!-- Payment Modal -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Complete Your Order</h2>
+        <form id="paymentForm">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" required>
+
+            <label for="cardExpiry">Expiry Date:</label>
+            <input type="text" id="cardExpiry" placeholder="MM/YY" required>
+
+            <label for="cardCVC">CVC:</label>
+            <input type="text" id="cardCVC" required>
+
+            <label for="amount">Amount (in ₹):</label>
+            <input type="text" id="amount" readonly>
+
+            <label for="discountCode">Discount Code:</label>
+            <input type="text" id="discountCode" placeholder="Enter discount code">
+
+            <button type="submit" id="submitPayment">Pay Now</button>
+        </form>
+
+<!-- Payment Success/Failure Message -->
+<div id="payment-message" style="display:none; text-align:center; margin-top:20px;">
+    <p id="message-text"></p>
+</div>
+
+
+        <h3>Pay using UPI</h3>
+        <div class="upi-options">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Google_Pay_logo.svg/1200px-Google_Pay_logo.svg.png" alt="Google Pay" title="Google Pay" width="100">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/PhonePe_Logo.png/1200px-PhonePe_Logo.png" alt="PhonePe" title="PhonePe" width="100">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/BHIM_logo.svg/1200px-BHIM_logo.svg.png" alt="paytm" title="paytm" width="100">
+            <!-- Add more UPI options as needed -->
+        </div>
+    </div>
+</div>
+
+
+    <footer>
+        <p>© 2024 Gourmet Delight. All rights reserved.</p>
+    </footer>
+
+    <script src="resturanant.js"></script>
+</body>
+</html>
